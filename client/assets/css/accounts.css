@@ -1,0 +1,88 @@
+body{
+    background-color: black;
+}
+#menu{
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+}
+#actionImg{
+    height: 30px;
+}
+.toast{
+    position: absolute;
+    right: 0px;
+    top: 110px;
+    max-width: 687px;
+    background-color: #212121;
+    color: white;
+    font-family: monospace;
+    font-size: 100%;
+    border-radius: 20px;
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+}
+
+#transactionBox{
+    margin-top: 100px;
+}
+.divBox{
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+    font-family: monospace;
+    font-size: 105%;
+}
+input{
+    margin-bottom: 32px;
+}
+input:focus {
+    background-color: #212121;
+}
+p{
+    margin-bottom: 3.5rem;
+    text-align: center;
+    font-size: 150%;
+    color: ghostwhite;
+}
+.form-control{
+    background-color: #212121;
+    border: none;
+}
+#historyBox{
+
+    font-family: monospace;
+    font-size: 105%;
+}
+#table_id_wrapper{
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+    padding: 2.5rem;
+    border-radius: 20px;
+}
+
+#table_id thead{
+    color: white;
+    font-size: 121%;
+    text-align: center;
+}
+
+#table_id tbody tr{
+    background-color: #212121;
+    color: white;
+    text-align: center;
+}
+.dataTables_wrapper .dataTables_length select{
+    background-color: #212121;
+    color: white;
+    border: none;
+}
+.dataTables_wrapper .dataTables_filter input{
+    background-color: #212121;
+    color: white;
+    border: none;
+}
+
+#balance{
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-family: monospace;
+    font-size: 105%;
+}

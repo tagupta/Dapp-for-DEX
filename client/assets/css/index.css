@@ -1,0 +1,67 @@
+body{
+background-color: black;
+}
+#loginBox{
+    margin-top: 50px;
+    border: 6px solid black;
+    border-radius: 20px;
+    padding: 2.5rem;
+    font-size: x-large;
+}
+#loginBox h3{
+    padding: 0.5rem;
+    text-align: center;
+} 
+.index-title{
+    font-size: 250%;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    margin: 2.5rem;
+}
+#loginBtn,#signUpBtn{
+    border: 1px solid cyan;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+}
+
+#loginBtn h3{
+    color: white;
+    font-family: monospace;
+    padding-bottom: 2.5rem;
+}
+
+#signUpBtn h3{
+    color: white;
+    font-family: monospace;
+    padding-bottom: 2.5rem;
+}
+button img{
+    height: 200px;
+    padding-bottom: 50px;
+}
+button span{
+    color: white;
+    font-family: monospace;
+    font-size: 116%;
+}
+.buttons{
+    margin-top: 30px;
+}
+
+.toast{
+    position: absolute;
+    right: 0px;
+    top: 32px;
+    max-width: 687px;
+    background-color: #212121;
+    color: white;
+    font-family: monospace;
+    font-size: 100%;
+    border-radius: 20px;
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+}
+#actionImg{
+    height: 30px;
+}

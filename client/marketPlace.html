@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Place</title>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/web3.min.js"></script>
+    <script src="./abi.js"></script>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/mystyle.css">
+    <link rel="stylesheet" href="assets/css/marketPlace.css">
+    
+
+</head>
+<body>
+    <div id="menu"></div>
+
+    <div class="container">
+        <div class="row justify-content-around" id="ordersRow">
+          <div class="col-lg-5 limitBox">
+              <p>
+                  <strong>
+                        <span> Create Limit</span>
+                        <span class="dropdown">
+                            <a class="dropdown-toggle" id="limitSideDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong>BUY</strong>
+                            </a>
+                            <span id="sides" class="dropdown-menu" aria-labelledby="limitSideDropdown">
+                            <button class='btn tokenBtn dropdown-item' onclick="getLimitSide('BUY')">BUY</button>
+                            <button class='btn tokenBtn dropdown-item' onclick="getLimitSide('SELL')">SELL</button>
+                            </span>
+                        </span>  
+                        <span>Order</span>
+                    </strong>
+               </p> 
+              <div class="justify-content-around LimitDiv" >
+                <input type="number" class="form-control" placeholder="Enter Amount" id="limitAmount">
+                <input type="number" class="form-control" placeholder="Enter Price" id="limitPrice">
+              </div>
+              <div style="margin-bottom: 30px;">
+                  <button class="btn myBtnStyle" onclick="placeLimitOrder($('#limitAmount').val(),$('#limitPrice').val())">Place Order</button>
+              </div>
+          </div>
+
+          <div class="col-lg-5 marketBox">
+            <p>
+                <strong>
+                    <span>Create Market</span>
+                    <span class="dropdown">
+                        <a class="dropdown-toggle" id="mktSideDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <strong>BUY</strong>
+                        </a>
+                        <span id="sides" class="dropdown-menu" aria-labelledby="mktSideDropdown">
+                        <button class='btn tokenBtn dropdown-item' onclick="getMarketSide('BUY')">BUY</button>
+                        <button class='btn tokenBtn dropdown-item' onclick="getMarketSide('SELL')">SELL</button>
+                        </span>
+                    </span>  
+                    <span>Order</span>
+                </strong>
+            </p> 
+            <div class="marketDiv">
+                <input type="number" class="form-control" placeholder="Enter Amount" id="marketAmount">
+            </div>
+            <div style="margin-bottom: 30px;">
+                <button class="btn myBtnStyle" onclick="placeMarketOrder($('#marketAmount').val())">Place Order</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+     
+    <div class="container">
+      <div class="row justify-content-around pendingLimitOrders">
+         <div class="col-lg-10">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="headingOne">
+                      <div>
+                        <strong>
+                            <span>Pending Limit</span>
+                            <span class="dropdown">
+                                <a class="dropdown-toggle" id="pendingLimitOrder" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <strong>BUY</strong>
+                                </a>
+                                <span id="sides" class="dropdown-menu" aria-labelledby="pendingLimitOrder">
+                                <button class='btn tokenBtn dropdown-item' onclick="getPendLimitSide('BUY')">BUY</button>
+                                <button class='btn tokenBtn dropdown-item' onclick="getPendLimitSide('SELL')">SELL</button>
+                                </span>
+                            </span>  
+                            <span>Order</span>
+                        </strong> 
+                        <img id="limitOrderList" src="assets/img/square.png" alt="Collapse" class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      </div>
+                    </div>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    <div id="toastBoxx"></div>
+    
+    <div id="boxAdmin"></div>
+</body>
+
+<script src="./main.js"></script>
+<script src="assets/js/component.js"></script>
+<script src="assets/js/actions.js"></script>
+
+</html>

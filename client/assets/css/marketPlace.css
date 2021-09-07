@@ -1,0 +1,98 @@
+body{
+    background-color: black;
+}
+#menu{
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+}
+#actionImg{
+    height: 30px;
+}
+.toast{
+    position: absolute;
+    right: 0px;
+    top: 110px;
+    max-width: 687px;
+    background-color: #212121;
+    color: white;
+    font-family: monospace;
+    font-size: 100%;
+    border-radius: 20px;
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+}
+
+#ordersRow{
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+}
+
+ .limitBox{
+    border-radius: 20px;
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+    font-family: monospace;
+    font-size: 128%;
+}
+.LimitDiv{
+    display: flex;
+    margin: 2.5rem;
+}
+.limitBox p{
+    margin-top: 30px;
+    margin-bottom: 4rem;
+}
+.dropdown{
+  color: aqua;
+}
+.form-control{
+    background-color: #212121;
+    color: white;
+    border: none;
+    margin: 0.5rem;
+}
+.marketBox{
+    border-radius: 20px;
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+    font-family: monospace;
+    font-size: 128%;
+}
+.marketBox p{
+    margin-top: 30px;
+    margin-bottom: 4rem;
+}
+.marketDiv{
+    margin: 2.5rem;
+}
+.pendingLimitOrders{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.accordion{
+    border-radius: 20px;
+    box-shadow: -1px -1px 20px 0px #04c1f0;
+    font-family: monospace;
+    font-size: 128%;
+    padding: 0.5rem;
+}
+.accordion-header{
+    text-align: center;
+    padding: 1.5rem;
+    color: white;
+}
+.accordion-body{
+    margin: 1.5rem;
+}
+.accordion-button{
+    float: right;
+}
+img{
+    background-color: aqua;
+    height: 38px;
+    border-radius: 50%;
+}
+thead{
+    color: white;
+}
+tbody tr{
+    color: white;
+    background-color: #212121;
+}

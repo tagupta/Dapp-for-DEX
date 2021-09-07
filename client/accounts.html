@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wallet</title>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/web3.min.js"></script>
+    <script src="./abi.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/mystyle.css">
+    <link rel="stylesheet" href="assets/css/accounts.css">
+
+</head>
+<body>
+    <div id="menu"></div>
+    <div id="balance">
+      <span><strong>Balance:</strong></span>
+      <span id="balValue">0</span>
+    </div>
+    <div class="container">
+      <div class="row justify-content-around" id="transactionBox">
+        <div class="col-lg-4 divBox">
+          <p><strong>Deposit Token</strong></p>
+         <input type="number" class="form-control" placeholder="Enter Amount" id="depositAmt">
+         <div style="text-align: center;">
+           <button class="btn myBtnStyle approveBtn" style="margin-right: 0.5rem;display: none;" onclick="approveDex($(depositAmt).val())">Approve Dex</button>
+           <button class="btn myBtnStyle" onclick="depositTokens($('#depositAmt').val())">Deposit</button>
+         </div>
+        </div>
+        <div class="col-lg-4 divBox">
+          <p><strong>Withdraw Token</strong></p>
+          <input type="number" class="form-control" placeholder="Enter Amount" id="withdrawAmt">
+          <div style="text-align: center;">
+            <button class="btn myBtnStyle" style="text-align: center;" onclick="withdrawTokens($('#withdrawAmt').val())">Withdraw</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="historyBox">
+      <div class="row justify-content-around" style="margin-top: 100px;">
+         <div class="col-lg-8">
+            <p><strong>Transaction History</strong></p>
+         </div>
+      </div>
+      <div class="row justify-content-around" style="margin-bottom: 100px;">
+        <div class="col-lg-11">
+          <table id="table_id">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Ticker</th>
+                    <th>Address</th>
+                    <th>Amount</th>
+                    <th>Creation Time</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+     
+    <div id="toastBoxx"></div>
+    <div id="boxAdmin"></div>
+</body>
+
+<script src="./main.js"></script>
+<script src="assets/js/component.js"></script>
+<script src="assets/js/actions.js"></script>
+<script src="assets/js/accounts.js"></script>
+
+</html>

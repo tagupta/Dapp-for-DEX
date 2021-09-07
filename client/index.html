@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moralis Dapp</title>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/web3.min.js"></script>
+    <script src="./abi.js"></script>
+    
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/mystyle.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+
+</head>
+<body>
+    <div class="container p-5">
+        <h2 class="index-title">Decentralized Exchange</h2>
+    </div>
+    <div class="container">
+        <div class="row justify-content-around buttons">
+          <button class="btn col-lg-4" id="signUpBtn" data-toggle="modal" data-target="#signUpModal">
+            <h3>Sign Up</h3>
+            <img src="assets/img/add-user.png" alt="Sign up"><br>
+            <span>Please sign in to create an account.</span>
+          </button>
+          <button class="btn col-lg-4" id="loginBtn" data-toggle="modal" data-target="#loginModal">
+            <h3>Login</h3>
+            <img src="assets/img/log-in.png" alt="Login"><br>
+            <span>Please log in to access DEX.</span>
+          </button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signUpModalLabel">Sign Up Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="inputEmail" class="col-form-label">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email address.</small>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" class="col-form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" onclick = "signUp($('#inputEmail').val(),$('#inputPassword').val())">Sign up</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Log In Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="inputUserName" class="col-form-label">User Name</label>
+                <input type="email" class="form-control" id="inputUserName" aria-describedby="emailHelp" placeholder="User name">
+                <small id="emailHelp" class="form-text text-muted">Enter your email address.</small>
+              </div>
+              <div class="form-group">
+                <label for="inputPasswordForLogin" class="col-form-label">Password</label>
+                <input type="password" class="form-control" id="inputPasswordForLogin" placeholder="Password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" onclick = "loginWithUsername($('#inputUserName').val(),$('#inputPasswordForLogin').val())">Log in</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="toastBoxx"></div>
+
+
+</body>
+<script src="./main.js"></script>
+
+</html>
