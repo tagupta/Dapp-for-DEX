@@ -28,6 +28,10 @@ function getPendLimitSide(side){
   $('#pendingLimitOrder').html(side).wrapInner("<strong></strong>");
 }
 
+function getPendMarketSide(side){
+  $('#pendingMarketOrder').html(side).wrapInner("<strong></strong>");
+}
+
 function timeConverter(UNIX_timestamp){
   var a = new Date(UNIX_timestamp * 1000);
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -57,4 +61,42 @@ function appendTableRow(lstTxn){
     "creationTime": time
 } ).draw();
 }
+
+function appendOrdersRows(order){
+  var id = order.id;
+  var trader = order.trader;
+  var amount = web3.utils.fromWei(order.amount,'ether') + " " + web3.utils.toUtf8(order.ticker);
+  var price =  order.price + ' ETH / ' + web3.utils.toUtf8(order.ticker);
+  var filled = order.filled;
+
+  var row = 
+   `<tr>
+     <th scope="row">${id}</th>
+     <td>${trader}</td>
+     <td>${amount}</td>
+     <td>${price}</td>
+     <td>${filled}</td>
+    </tr>`;
+  
+  $('#limitOrderTable').append(row);
+  
+}
+
+function appendMarketOrdersRows(order){
+  var id = order.id;
+  var trader = order.trader;
+  var amount = web3.utils.fromWei(order.amount,'ether') + " " + web3.utils.toUtf8(order.ticker);
+  var filled = order.filled;
+
+  var row = 
+   `<tr>
+     <th scope="row">${id}</th>
+     <td>${trader}</td>
+     <td>${amount}</td>
+     <td>${filled}</td>
+    </tr>`;
+
+    $('#marketOrderTable').append(row);
+}
+
 

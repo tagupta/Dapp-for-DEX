@@ -66,6 +66,10 @@ body{
     margin-top: 100px;
     margin-bottom: 100px;
 }
+.pendingMarketOrders{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 .accordion{
     border-radius: 20px;
     box-shadow: -1px -1px 20px 0px #04c1f0;
@@ -95,4 +99,8 @@ thead{
 tbody tr{
     color: white;
     background-color: #212121;
+    font-size: large;
+}
+thead tr{
+    font-size: x-large;
 }

@@ -1,6 +1,6 @@
 Moralis.initialize('CKCCV0P1U1AWwiAq9D3ubgxu8WylV816R8vK27Xw');
 Moralis.serverURL = 'https://mrkwuempr36s.moralisweb3.com:2053/server';
-const DEX_ADDRESS = '0x7EB619E4552056051c750ECC4E20A1384eDFAC82'; 
+const DEX_ADDRESS = '0xE39550735BC56234a2559ccbA3c9EF59c992c0fd'; 
 var contractOwner;
 var currentUser;
 var instance;
@@ -254,6 +254,7 @@ async function placeLimitOrder(amount,price){
             } else {
                 $('#toastMessage').html(`Success: Limit BUY Order for ${ticker}`);
                 $('.toast').toast('show');
+                getPendingLimitOrders();
             }
           })
         }
@@ -265,6 +266,7 @@ async function placeLimitOrder(amount,price){
                 } else {
                     $('#toastMessage').html(`Success: Limit SELL Order for ${ticker}`);
                     $('.toast').toast('show');
+                    getPendingLimitOrders();
                 }
               })
         }
@@ -288,6 +290,7 @@ async function placeMarketOrder(amount){
             } else {
                 $('#toastMessage').html(`Success: Market BUY Order for ${ticker}`);
                 $('.toast').toast('show');
+                getPendingMarketOrders();
             }
          })
        }
@@ -299,9 +302,56 @@ async function placeMarketOrder(amount){
             } else {
                 $('#toastMessage').html(`Success: Market SELL Order for ${ticker}`);
                 $('.toast').toast('show');
+                getPendingMarketOrders();
             }
          })
        }
     }
+}
 
+async function getPendingLimitOrders(){
+    var ticker = $('#navbarDropdown').find('strong').html();
+    var side = $('#pendingLimitOrder').find('strong').html();
+    if(ticker == 'ETH'){}
+    else{
+        if(side == 'BUY'){
+          var limitBuyList = await instance.methods.getOrderBook(web3.utils.fromUtf8(ticker.toString()),0).call();
+          $('#limitOrderTable').html("");
+          for(var i = 0 ; i < limitBuyList.length ; i++){
+              appendOrdersRows(limitBuyList[i]);
+          }
+        }
+        else if(side == 'SELL'){
+            var limitSellList = await instance.methods.getOrderBook(web3.utils.fromUtf8(ticker.toString()),1).call();
+            console.log(limitSellList);
+            $('#limitOrderTable').html("");
+            for(var i = 0 ; i < limitSellList.length ; i++){
+                appendOrdersRows(limitSellList[i]);
+            }
+        }
+    }
+    
+}
+
+async function getPendingMarketOrders(){
+  var ticker = $('#navbarDropdown').find('strong').html();
+  var side = $('#pendingMarketOrder').find('strong').html();
+  if(ticker == 'ETH'){}
+  else{
+      if(side == 'BUY'){
+         var marketBuyList = await instance.methods.getMarketOrderBook(web3.utils.fromUtf8(ticker.toString()),0).call();
+         $('#marketOrderTable').html("");
+         for(var i = 0 ; i < marketBuyList.length ; i++){
+            appendMarketOrdersRows(marketBuyList[i]);
+        }
+        }
+      else if(side == 'SELL'){
+        var marketSellList = await instance.methods.getMarketOrderBook(web3.utils.fromUtf8(ticker.toString()),1).call();
+        console.log(marketSellList);
+        $('#marketOrderTable').html("");
+        for(var i = 0 ; i < marketSellList.length ; i++){
+            appendMarketOrdersRows(marketSellList[i]);
+        }
+      }
+  }
 }

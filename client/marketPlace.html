@@ -80,7 +80,7 @@
                     <div class="accordion-header" id="headingOne">
                       <div>
                         <strong>
-                            <span>Pending Limit</span>
+                            <span>Limit</span>
                             <span class="dropdown">
                                 <a class="dropdown-toggle" id="pendingLimitOrder" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <strong>BUY</strong>
@@ -100,37 +100,14 @@
                         <table class="table table-striped">
                             <thead>
                               <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Trader</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Filled</th>
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
+                            <tbody id="limitOrderTable">
                             </tbody>
                           </table>
                       </div>
@@ -141,6 +118,51 @@
       </div>
     </div>
 
+    <div class="container">
+        <div class="row justify-content-around pendingMarketOrders">
+           <div class="col-lg-10">
+              <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                      <div class="accordion-header" id="headingOne">
+                        <div>
+                          <strong>
+                              <span>Market</span>
+                              <span class="dropdown">
+                                  <a class="dropdown-toggle" id="pendingMarketOrder" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <strong>BUY</strong>
+                                  </a>
+                                  <span id="sides" class="dropdown-menu" aria-labelledby="pendingMarketOrder">
+                                  <button class='btn tokenBtn dropdown-item' onclick="getPendMarketSide('BUY')">BUY</button>
+                                  <button class='btn tokenBtn dropdown-item' onclick="getPendMarketSide('SELL')">SELL</button>
+                                  </span>
+                              </span>  
+                              <span>Order</span>
+                          </strong> 
+                          <img id="marketOrderList" src="assets/img/square.png" alt="Collapse" class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        </div>
+                      </div>
+                      <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th scope="col">ID</th>
+                                  <th scope="col">Trader</th>
+                                  <th scope="col">Amount</th>
+                                  <th scope="col">Filled</th>
+                                </tr>
+                              </thead>
+                              <tbody id="marketOrderTable">
+                              </tbody>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+           </div>
+        </div>
+      </div>
+
     <div id="toastBoxx"></div>
     
     <div id="boxAdmin"></div>
@@ -149,5 +171,6 @@
 <script src="./main.js"></script>
 <script src="assets/js/component.js"></script>
 <script src="assets/js/actions.js"></script>
+<script src="assets/js/marketPlace.js"></script>
 
 </html>
