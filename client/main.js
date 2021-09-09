@@ -1,6 +1,6 @@
 Moralis.initialize('CKCCV0P1U1AWwiAq9D3ubgxu8WylV816R8vK27Xw');
 Moralis.serverURL = 'https://mrkwuempr36s.moralisweb3.com:2053/server';
-const DEX_ADDRESS = '0xE39550735BC56234a2559ccbA3c9EF59c992c0fd'; 
+const DEX_ADDRESS = '0x516e3d2A2C921b24C49338339b529406bC89FFB5'; 
 var contractOwner;
 var currentUser;
 var instance;
