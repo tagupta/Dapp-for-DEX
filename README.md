@@ -21,20 +21,26 @@ This dApp was built using:
 
 ## Usage
 **AUTHENTICATION**
-*****
+
 ![Authentication](https://user-images.githubusercontent.com/45707143/135210266-ebe4876c-e733-4a30-8de2-2a20e7aa6720.gif)
+*****
 
 **ADMIN**
+
+Please click the link to watch the demonstration of Admin role.
+[Admin Demo](https://drive.google.com/file/d/1Ju0IVvJccvRy06RXsgM7gsE8oWOLhgvC/view?usp=sharing)
 *****
 
 **ACCOUNTS**
-*****
+
 https://user-images.githubusercontent.com/45707143/135210750-1b0baebf-d159-4721-a776-35428f0d5a27.mp4
+*****
 
 
 **PLACE ORDER**
-*****
+
 https://user-images.githubusercontent.com/45707143/135211111-399b4b53-e595-4feb-979e-c7d09f99ed91.mp4
+*****
 
 
 ## Set up Local Development Environment
