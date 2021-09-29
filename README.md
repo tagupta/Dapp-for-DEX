@@ -18,3 +18,17 @@ This dApp was built using:
 * Ganache
 * Web3.js
 * MetaMask
+
+## Usage
+**AUTHENTICATION**
+*****
+![Authentication](https://user-images.githubusercontent.com/45707143/135210266-ebe4876c-e733-4a30-8de2-2a20e7aa6720.gif)
+
+**ADMIN**
+*****
+
+**ACCOUNTS**
+*****
+
+**PLACE ORDER**
+*****
